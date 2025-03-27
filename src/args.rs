@@ -5,6 +5,10 @@ use clap::{ArgGroup, Parser};
 #[command(version, author, about)]
 #[command(group=ArgGroup::new("log").args(["verbose", "quiet"]).multiple(false))]
 pub struct Args {
+
+    pub place: Option<String>,
+
+
     /// The source file to read from. If not provided, read from stdin.
     #[arg(short, long)]
     pub source: Option<String>,
